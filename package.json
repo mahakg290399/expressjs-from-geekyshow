@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.18"
+  },
+  "name": "geeky-show",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahakg290399/expressjs-from-geekyshow.git"
+  },
+  "keywords": [
+    "javascript",
+    "expressjs",
+    "nodejs"
+  ],
+  "author": "Mahak Goyal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mahakg290399/expressjs-from-geekyshow/issues"
+  },
+  "homepage": "https://github.com/mahakg290399/expressjs-from-geekyshow#readme",
+  "description": ""
+}
