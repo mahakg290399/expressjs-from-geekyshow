@@ -14,22 +14,30 @@ const studentSchema = new mongoose.Schema({
 //compiling Schema
 const studentModel = mongoose.model('student', studentSchema)
 
-const createDoc = async ()=>{
-    try {
-        const studentDoc = new studentModel({
-            name: "Disha Goyal",
-            age: 26,
-            fees: 6000.40,
-            hobbies: ["Gardening", "Dancing"],
-            isactive: true,
-            comments: [{ value: 'She is married now' }]
-        })
-        
-        const result = await studentDoc.save()
-        console.log(result); 
-    } catch (error) {
-        console.log(error);
-    }
+//retrieve all
+
+const getAll = async () =>{
+    const result = await studentModel.find()
+    
+    result.forEach(
+        (item)=> console.log(
+            item.name,
+            item.age,
+            item.fees.toString(),
+            item.hobbies[0],
+            item.hobbies[1],
+            item.isactive,
+            item.comments[0].value,
+            "\nPublish"+ item.comments[0].publish,
+            item.join
+        )
+    )
 }
 
-export default createDoc
+//get specific data
+const getSpecificData = async ()=>{
+    const result = await studentModel.find().select(['-name','-age']);
+
+    console.log(result)
+}
+export {getAll, getSpecificData }
